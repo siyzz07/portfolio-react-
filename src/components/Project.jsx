@@ -3,7 +3,6 @@ import { useTheme } from "../ContextApi/ThemeProvider";
 import ProjectCard from "./ProjectCard";
 import { projectDataContext } from "../ContextApi/ProjectSample";
 import { projectsDetails } from "./DatasOfProject";
-import chronexImg from '../assets/images/ecommersImg.png'
 
 
 function Projects() {
