@@ -19,7 +19,7 @@ const ProjectData = () => {
   }
 
   // If not open, return null (conditional rendering)
-  if (!data.popup) return null;
+  if (!data.popup) return null
 
   return (
     <div className="fixed inset-0 bg-[#00000098] bg-opacity-60 flex items-center justify-center z-50 p-4 overflow-y-auto">
