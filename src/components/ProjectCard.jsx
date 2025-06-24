@@ -4,7 +4,6 @@ import { projectDataContext } from "../ContextApi/ProjectSample";
 
 
 //----------- ecommerse
-import chronexImg from '../assets/images/ecommersImg.png'
 
 function ProjectCard({ title, description, link, image,index,cover }) {
   const { isDark } = useTheme();

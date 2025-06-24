@@ -11,10 +11,6 @@ function Projects() {
 
 
 
-
-let image={
-  0:chronexImg,
-}
   
   const projects=projectsDetails
 
