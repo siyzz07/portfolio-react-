@@ -1,6 +1,5 @@
 
 //----------- ecommerse
-import chronexImg from '../assets/images/ecommersImg.png'
 
 
  export const projectsDetails = [
