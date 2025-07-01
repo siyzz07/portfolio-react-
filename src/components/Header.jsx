@@ -2,6 +2,7 @@ import { useTheme } from "../ContextApi/ThemeProvider";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaInstagram } from "react-icons/fa"; 
 import profileImg from '../assets/ProfileImage.jpg'
 
+
 function Header() {
   const { isDark } = useTheme(); // Get theme state from ThemeProvider
 
