@@ -30,7 +30,7 @@ function Header() {
           Full-Stack Developer, Technology & Business Enthusiast
         </p>
         <a
-          href="/path/to/your-cv.pdf"
+          href="Shibin_Siyad___CV (4).pdf"
           download
           className={`mt-4 sm:mt-6 inline-block px-6 sm:px-8 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition ${
             isDark
