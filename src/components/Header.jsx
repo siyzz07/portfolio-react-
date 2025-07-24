@@ -71,7 +71,7 @@ function Header() {
           </a>
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/shibin_siyzz"
+            href="https://www.instagram.com/shibin_siyad__"
             target="_blank"
             rel="noopener noreferrer"
             className={`p-3 sm:p-4 rounded-full text-lg sm:text-xl md:text-2xl transition ${
