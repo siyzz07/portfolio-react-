@@ -9,3 +9,9 @@ export default defineConfig({
     port: 5174, 
   },
 });
+
+
+// Deployment ID
+// AKfycbz7o8z-uWEV9kVUYKPVqGyULTx_gXWptXnH2hha85CODt893ahAfT-bizfZclJ0S2wrag
+
+// https://script.google.com/macros/s/AKfycbz7o8z-uWEV9kVUYKPVqGyULTx_gXWptXnH2hha85CODt893ahAfT-bizfZclJ0S2wrag/exec
