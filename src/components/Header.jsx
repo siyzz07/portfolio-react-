@@ -18,7 +18,7 @@ function Header() {
 
 
       
-<Background/>
+
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <img

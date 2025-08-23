@@ -1,4 +1,5 @@
 import { useTheme } from "../ContextApi/ThemeProvider";
+import Background from "./Background";
 
 function About() {
   const { isDark } = useTheme();
@@ -11,6 +12,7 @@ function About() {
           : "bg-gray-900 text-gray-200 border-y-2 border-black"
       }`}
     >
+      <Background/>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-8">
           About Me
