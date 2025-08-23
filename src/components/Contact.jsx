@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "../ContextApi/ThemeProvider";
+import Background from "./Background";
 
 function Contact() {
   const { isDark } = useTheme();

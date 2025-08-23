@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCard";
 import { projectDataContext } from "../ContextApi/ProjectSample";
 import { projectsDetails } from "./DatasOfProject";
 import { motion, AnimatePresence } from "framer-motion";
+import Background from "./Background";
 
 function Projects() {
   const { isDark } = useTheme();

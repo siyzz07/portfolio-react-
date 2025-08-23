@@ -1,7 +1,7 @@
 import { useTheme } from "../ContextApi/ThemeProvider";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaInstagram } from "react-icons/fa"; 
 import profileImg from '../assets/ProfileImage.jpg'
-
+import Background from "./Background";
 
 function Header() {
   const { isDark } = useTheme(); // Get theme state from ThemeProvider
@@ -15,7 +15,12 @@ function Header() {
           : "bg-white text-black"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+
+      
+<Background/>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <img
           src={profileImg}
           alt="Profile"
