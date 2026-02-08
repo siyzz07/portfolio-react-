@@ -1,102 +1,131 @@
 import { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { useTheme } from "../ContextApi/ThemeProvider";
-import Switch from "@mui/material/Switch";
+import { motion, AnimatePresence } from "framer-motion";
 
 function NavBar() {
   const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleScroll = (e, targetId) => {
     e.preventDefault();
     document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false); // Close menu after navigation
+    setIsMenuOpen(false);
   };
 
-  // Close menu when pressing Escape
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") setIsMenuOpen(false);
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  const navLinks = ["Home", "About", "Projects", "Skills", "Contact"];
 
   return (
-    <nav
-      className={`fixed w-full top-0 shadow-md  z-10 transition-colors duration-300 ${
-        isDark ? "bg-black text-white" : "bg-white text-black"
-      }`}
-    >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-sm xl:text-2xl font-bold z-10">Shibin Siyad</h1>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-xl z-20"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: "circOut" }}
+        className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 transition-all duration-300 ${isMenuOpen ? 'mix-blend-difference' : ''}`}
+      >
+        <div 
+          className={`
+            flex items-center justify-between px-6 py-3 rounded-full transition-all duration-500
+            ${scrolled || isMenuOpen ? "bg-white/10 backdrop-blur-md border border-white/10 shadow-lg w-[90%] md:w-[70%]" : "bg-transparent w-full container"}
+          `}
         >
-          {isMenuOpen ? <FiX /> : <FiMenu />}
-        </button>
-
-        {/* Navigation Links */}
-        <div
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } md:flex md:flex-1 z-50 justify-center items-center space-y-4 md:space-y-0 md:space-x-8 absolute md:static top-16 left-0 w-full md:w-auto ${
-            isDark ? "bg-black" : "bg-white"
-          } p-4 md:p-0 transition-colors duration-300`}
-        >
-          <a
+          {/* Logo */}
+          <a 
             href="#home"
             onClick={(e) => handleScroll(e, "home")}
-            className="block md:inline-block hover:text-gray-500 transition"
+            className="flex items-center gap-2 group"
           >
-            Home
-          </a>
-          <a
-            href="#about"
-            onClick={(e) => handleScroll(e, "about")}
-            className="block md:inline-block hover:text-gray-500 transition"
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            onClick={(e) => handleScroll(e, "projects")}
-            className="block md:inline-block hover:text-gray-500 transition"
-          >
-            Projects
-          </a>
-          <a
-            href="#skills"
-            onClick={(e) => handleScroll(e, "skills")}
-            className="block md:inline-block hover:text-gray-500 transition"
-          >
-            Skills
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => handleScroll(e, "contact")}
-            className="block md:inline-block hover:text-gray-500 transition"
-          >
-            Contact
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(99,102,241,0.5)] group-hover:scale-110 transition-transform">
+              S
+            </div>
+            <span className="font-bold tracking-widest text-sm text-foreground group-hover:text-primary transition-colors">SIYAD</span>
           </a>
 
-          {/* Theme Toggle */}
-          <div className="flex justify-center mt-4 md:mt-0 ">
-            <Switch
-              checked={isDark}
-              onChange={toggleTheme}
-              inputProps={{ "aria-label": "toggle dark mode" }}
-            />
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={(e) => handleScroll(e, item.toLowerCase())}
+                className="text-xs font-medium uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors relative group"
+              >
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+          </div>
+
+          {/* Actions */}
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={toggleTheme}
+              className="w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-white/10 transition-all"
+            >
+              <div className={`w-2 h-2 rounded-full ${isDark ? 'bg-primary shadow-[0_0_8px_currentColor]' : 'bg-secondary'}`} />
+            </button>
+            
+            <button
+              className="md:hidden text-foreground hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
           </div>
         </div>
-      </div>
-    </nav>
+      </motion.nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            className="fixed inset-0 z-50 bg-background/95 flex flex-col items-center justify-center pointer-events-auto"
+          >
+            <button className="absolute top-6 right-6 p-4 rounded-full bg-white/5 hover:bg-white/10 text-muted-foreground hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <FiX size={28} />
+            </button>
+            
+            <div className="flex flex-col items-center gap-6">
+              {navLinks.map((item, i) => (
+                <motion.a
+                  key={item}
+                  custom={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={(e) => handleScroll(e, item.toLowerCase())}
+                  className="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-white/50 hover:to-primary transition-all duration-300"
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="absolute bottom-12 flex gap-8 text-muted-foreground"
+            >
+              <a href="https://github.com/siyzz07" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2"><FiGithub size={28} /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2"><FiLinkedin size={28} /></a>
+              <a href="mailto:contact@example.com" className="hover:text-white transition-colors p-2"><FiMail size={28} /></a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 

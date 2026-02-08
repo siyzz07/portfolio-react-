@@ -10,7 +10,8 @@
       description2:"The admin dashboard provides seamless management of products, users, and orders, offering tools to update inventory, monitor user activities, and track order statuses. Chronex also supports secure payment integration, ensuring safe transactions alongside a Cash on Delivery (COD) option. Users can manage their order history and enjoy a transparent shopping process.Developing Chronex was a significant learning journey. It allowed me to gain practical experience in backend development, RESTful API design, and database management. I also learned to implement secure user authentication, CRUD operations, and real-time data handling. This project strengthened my understanding of how the backend and frontend communicate to deliver a cohesive and dynamic user experience.Chronex is a testament to my ability to design and build scalable, secure, and efficient web applications, laying the groundwork for future full-stack development endeavors.",
       image: `https://res.cloudinary.com/dmvptwzjf/image/upload/v1750744085/Screenshot_2025-06-23_215649_pwvyqm.png`,
       vedio:"https://res.cloudinary.com/dmvptwzjf/video/upload/v1750748056/Screen_Recording_2025-06-23_220915_ze3s5o.mp4",
-      index:0
+      index:0,
+      stack:["Node.js","Express.js","MongoDB","EJS","Bootstrap"]
     },
     {
       title: "Mony Map: A Comprehensive Expense Tracking and Financial Management Tool",
@@ -19,7 +20,8 @@
       description2:"A key feature of Mony Map is its ability to help users set spending limits for specific categories. The application sends timely alerts if expenses exceed the predefined limits, ensuring better financial discipline. Additionally, users can monitor and control their spending habits across different categories for better budgeting. With secure user authentication powered by tokens, the application ensures that all user data is protected and personalized for each account. By seamlessly integrating expense tracking, borrowing/lending management, and real-time financial insights, Mony Map becomes an essential tool for anyone aiming to optimize their financial health and achieve greater control over their monetary decisions.",
       image: `https://res.cloudinary.com/dmvptwzjf/image/upload/v1750785211/Screenshot_2025-06-24_222214_rd7kk1.png`,
       vedio:"https://res.cloudinary.com/dmvptwzjf/video/upload/v1750785396/moneymap_odajrt.mp4",
-      index:1
+      index:1,
+      stack:["Node.js","Express.js","MongoDB","React","Tailwind"]
     },
     {
       title: "Woodland Website Clone: A Responsive Web Development Project",
@@ -28,7 +30,8 @@
       description2: "To enhance responsiveness beyond Bootstrap’s capabilities, custom media queries were implemented to fine-tune the design for unique screen sizes and layouts. These media queries ensure that all visual elements, such as images, buttons, and text, adjust fluidly to maintain readability and usability. This project not only demonstrates proficiency in using responsive design techniques but also showcases the ability to create modern, professional-looking web pages that deliver consistent experiences across devices. The Woodland website clone is an excellent example of combining framework-based design with custom CSS for a polished and adaptable web solution.",
       image: "https://res.cloudinary.com/dmvptwzjf/image/upload/v1750744337/Screenshot_2025-06-23_221414_jlpiwn.png",
       vedio:"https://res.cloudinary.com/dmvptwzjf/video/upload/v1750748742/Screen_Recording_2025-06-23_221629_a3yrxl.mp4",
-      index:2
+      index:2,
+      stack:["HTML","CSS","Bootstrap"]
     },
     {
       title: "Toyota Website Clone: Mastering Web Design with HTML and CSS",
@@ -37,7 +40,8 @@
       description2:"Through this project, valuable insights were gained into responsive design and layout alignment, as attention to detail was essential to achieve a visually accurate replica. The exercise also reinforced best practices in organizing HTML and CSS code for readability and maintainability. The Toyota Website Clone serves as a foundational project to enhance web development skills and lay the groundwork for more advanced design and development endeavors.",
       image: "https://res.cloudinary.com/dmvptwzjf/image/upload/v1750744421/Screenshot_2025-06-23_222517_pezwon.png",
       vedio:"https://res.cloudinary.com/dmvptwzjf/video/upload/v1750749582/Screen_Recording_2025-06-23_222649_uepxbw.mp4",
-      index:3
+      index:3,
+      stack:["HTML","CSS","Bootstrap"]
     
     },
     {
@@ -46,7 +50,8 @@
       description1: "The Netflix Clone is a MERN-based web project developed to gain hands-on experience with React hooks and Axios for state management and API integration. The application replicates Netflix’s user interface, including dynamic movie listings, responsive design, and seamless user experience. React hooks like useState and useEffect were utilized to manage component states and lifecycle methods, offering a practical understanding of their real-world applications. Axios was used to fetch movie data from an external API, showcasing its simplicity and efficiency in handling HTTP requests.",
       description2: "This project also served as an introduction to the MERN stack, combining MongoDB, Express.js, React, and Node.js to create a dynamic and scalable application. The Netflix Clone not only reinforces foundational web development concepts but also highlights best practices for building modern, feature-rich web applications. By simulating a real-world project, it provided an excellent opportunity to understand the interaction between frontend and backend technologies.",
       image:"https://res.cloudinary.com/dmvptwzjf/image/upload/v1750744459/Screenshot_2025-06-23_223023_ui3qwa.png",
-      index:4
+      index:4,
+      stack:["Node.js","Express.js","React","Tailwind "]
     },
     {
       title:"OLX Clone: Exploring Firebase and API Integration",
@@ -55,7 +60,8 @@
       description2:"This project also involved dynamically displaying ads and products stored in Firebase, demonstrating how real-time data can be presented on a responsive user interface. By combining Firebase, Axios, and React, the OLX Clone provided valuable insights into building scalable, interactive, and secure applications. It serves as a practical foundation for mastering modern web development tools and techniques.",
       image:"https://res.cloudinary.com/dmvptwzjf/image/upload/v1750744478/Screenshot_2025-06-23_223837_mcg9oe.png",
       vedio:"",
-      index:5
+      index:5,
+      stack:["Node.js","Express.js","React","Firebase","Tailwind "]
       
     }
   ];
