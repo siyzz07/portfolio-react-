@@ -49,7 +49,7 @@ function Header() {
             className="flex flex-wrap items-center justify-center md:justify-start gap-6"
           >
             <a 
-              href="/Shibin_Siyad___Resume (5).pdf" 
+              href="/Shibin_Siyad___Resume.pdf" 
               download="Shibin_Siyad_Resume.pdf"
               className="btn-primary flex items-center gap-2 group cursor-pointer"
             >
