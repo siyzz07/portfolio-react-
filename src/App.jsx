@@ -23,14 +23,16 @@ function App() {
   useEffect(() => {
    
     const lenis = new Lenis({
-      duration: 1.5, 
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.8, 
+      easing: (t) => 1 - Math.pow(1 - t, 4), // quartic ease-out — silky smooth
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
+      mouseMultiplier: 0.8,
+      smoothTouch: true,
+      touchMultiplier: 1.5,
+      infinite: false,
+      autoResize: true,
     });
     lenisRef.current = lenis;
 

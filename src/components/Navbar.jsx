@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { FiMenu, FiX, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { useTheme } from "../ContextApi/ThemeProvider";
 import { motion, AnimatePresence } from "framer-motion";
+import { useWeather } from "../hooks/useWeather";
 
 function NavBar() {
   const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const weather = useWeather();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -65,6 +67,21 @@ function NavBar() {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
+            {/* Weather Widget */}
+            {!weather.loading && weather.temperature !== null && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs cursor-default hover:bg-white/10 hover:border-white/20 transition-all duration-300 group/weather"
+              >
+                <span className="text-sm">{weather.emoji}</span>
+                <span className="font-mono font-medium">{weather.temperature}°C</span>
+                <span className="max-w-0 overflow-hidden opacity-0 group-hover/weather:max-w-[120px] group-hover/weather:opacity-100 group-hover/weather:ml-1 transition-all duration-500 whitespace-nowrap text-white/50 text-[10px] capitalize">
+                  {weather.description}
+                </span>
+              </motion.div>
+            )}
+
             <button 
               onClick={toggleTheme}
               className="w-8 h-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-white/10 transition-all"

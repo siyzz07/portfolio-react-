@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from "react-icons/fa";
-import profileImg from '../assets/ProfileImage.jpg';
+import profileImg from '../assets/newprofile.jpeg';
 
 function Header() {
   return (
@@ -96,9 +96,10 @@ function Header() {
              
              {/* Main Image Container */}
              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 backdrop-blur-sm shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-black/40 z-10" />
+                <div className="absolute inset-0  bg-gradient-to-tr from-black/40 via-transparent to-black/40 z-10" />
                 <img 
-                  src="/Shibinprofile.png" 
+                  // src="/Shibinprofile.png" 
+                  src = {profileImg}
                   alt="Shibin Siyad" 
                   className="w-full h-full object-cover object-top scale-110 group-hover:scale-100 transition-transform duration-700 ease-out" 
                 />
@@ -113,14 +114,14 @@ function Header() {
                <span className="text-2xl">{`</>`}</span>
              </motion.div>
              
-             <motion.div 
+             {/* <motion.div 
                animate={{ y: [10, -10, 10] }} 
                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                className="absolute bottom-8 -left-8 w-auto px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-xl z-20"
              >
                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                <span className="text-xs font-mono text-white/80">Open to Work</span>
-             </motion.div>
+             </motion.div> */}
           </div>
         </motion.div>
 
